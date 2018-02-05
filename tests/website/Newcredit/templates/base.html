@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <!--<link rel="stylesheet" href="/static/css/style.css">-->
+</head>
+<body>
+    <h1>My helpful timestamp site</h1>
+    <hr>
+    {% block content %}{% endblock %}
+    {% block footer %}
+    <hr>
+    <p>Thanks for visiting my site.</p>
+    {% endblock %}
+<hr>
+</body>
+</html>

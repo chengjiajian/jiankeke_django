@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}注册{% endblock %}
+{% block content %}
+    <form action="{% url 'registSave' %}" method="post">
+        {% csrf_token %}
+        {% if error %}
+            <div style="color:red">{{ error }}</div>
+            <br/>
+        {% endif %}
+        用户:<input type="text" name="username" placeholder="输入用户名" value="{{ username }}"/>
+        <br/><br/>
+        密码:<input type="text" name="password" placeholder="输入密码" value="{{ password }}"/>
+        <br/><br/>
+        手机:<input type="text" name="phonenumber" placeholder="输入手机号(选填)" value="{{ phonenumber }}"/>
+        <br/><br/>
+        qq号:<input type="text" name="qqnumber" placeholder="输入qq号(选填)" value="{{ qqnumber }}"/>
+        <br/><br/>
+        <input type="submit" value="提交"/>
+    </form>
+    <a href="{% url 'online' %}">返回登录</a>
+{% endblock %}

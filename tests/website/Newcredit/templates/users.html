@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %}check users{% endblock %}
+<hr>
+{% block content %}
+<table>
+    <thead>
+        <tr>
+            <th>用户名</th>
+            <th>名称</th>
+            <th>密码</th>
+            <th>联系方式</th>
+            <th>操作</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for data in datas%}
+        <tr>
+            <th>{{ data.username }}</th>
+            <th>{{ data.title }}</th>
+            <th>{{ data.content }}</th>
+            <th>{{ data.publish_date }}</th>
+            <th>
+                <a href="">修改</a>
+                <a href="">删除</a>
+            </th>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
+</body>
+</html>
